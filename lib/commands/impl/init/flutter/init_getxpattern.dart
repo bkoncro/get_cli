@@ -21,10 +21,19 @@ Future<void> createInitGetxPattern() async {
   }
   var initialDirs = [
     Directory(Structure.replaceAsExpected(path: 'lib/app/data/')),
+    Directory(Structure.replaceAsExpected(path: 'lib/app/data/services')),
+    Directory(Structure.replaceAsExpected(path: 'lib/app/data/models')),
+    Directory(Structure.replaceAsExpected(path: 'lib/app/data/providers')),
+    Directory(Structure.replaceAsExpected(path: 'lib/app/global_widgets')),
+    Directory(Structure.replaceAsExpected(path: 'lib/app/routes')),
+    Directory(Structure.replaceAsExpected(path: 'lib/app/core')),
+    Directory(Structure.replaceAsExpected(path: 'lib/app/core/theme')),
+    Directory(Structure.replaceAsExpected(path: 'lib/app/core/utils')),
+    Directory(Structure.replaceAsExpected(path: 'lib/app/core/values')),
   ];
   GetXMainSample(isServer: isServerProject).create();
   await Future.wait([
-    CreatePageCommand().execute(),
+    CreatePageCommand().execute(isInit: true),
   ]);
   createListDirectory(initialDirs);
 

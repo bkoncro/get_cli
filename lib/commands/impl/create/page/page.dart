@@ -21,11 +21,13 @@ import '../../../interface/command.dart';
 class CreatePageCommand extends Command {
   @override
   String get commandName => 'page';
+  bool isInitialize = false;
 
   @override
   List<String> get alias => ['module', '-p', '-m'];
   @override
-  Future<void> execute() async {
+  Future<void> execute({bool isInit=false}) async {
+    isInitialize = isInit;
     var isProject = false;
     if (GetCli.arguments[0] == 'create' || GetCli.arguments[0] == '-c') {
       isProject = GetCli.arguments[1].split(':').first == 'project';
@@ -125,7 +127,7 @@ class CreatePageCommand extends Command {
       'bindings',
     );
     var autoRoute = PubspecUtils.autoRoute!;
-    if(autoRoute){
+    if(autoRoute || isInitialize){
       addRoute(
         name,
         Structure.pathToDirImport(bindingFile.path),
