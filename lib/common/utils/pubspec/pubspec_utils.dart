@@ -56,6 +56,24 @@ class PubspecUtils {
 
   static bool? get extraFolder => _extraFolder.value;
 
+  static final _autoRoute = _PubValue<bool?>(
+    () {
+      try {
+        var yaml = pubSpec.unParsedYaml!;
+        if (yaml.containsKey('get_cli')) {
+          if ((yaml['get_cli'] as Map).containsKey('auto_route')) {
+            return (yaml['get_cli']['auto_route'] as bool?);
+          }
+        }
+      } on Exception catch (_) {}
+      // retorno nulo está sendo tratado
+      // ignore: avoid_returning_null
+      return true;
+    },
+  );
+
+  static bool? get autoRoute => _autoRoute.value;
+
   static Future<bool> addDependencies(String package,
       {String? version, bool isDev = false, bool runPubGet = true}) async {
     var pubSpec = PubSpec.fromYamlString(_pubspecFile.readAsStringSync());

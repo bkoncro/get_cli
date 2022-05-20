@@ -124,12 +124,15 @@ class CreatePageCommand extends Command {
       ),
       'bindings',
     );
-
-    addRoute(
-      name,
-      Structure.pathToDirImport(bindingFile.path),
-      Structure.pathToDirImport(viewFile.path),
-    );
+    var autoRoute = PubspecUtils.autoRoute!;
+    if(autoRoute){
+      addRoute(
+        name,
+        Structure.pathToDirImport(bindingFile.path),
+        Structure.pathToDirImport(viewFile.path),
+      );
+    }
+    
     LogService.success(LocaleKeys.sucess_page_create.trArgs([name.pascalCase]));
   }
 

@@ -106,7 +106,10 @@ class CreateScreenCommand extends Command {
     addExport(
         'lib/infrastructure/navigation/bindings/controllers/controllers_bindings.dart',
         "export 'package:${PubspecUtils.projectName}/${Structure.pathToDirImport(binding.path)}'; ");
-    arcAddRoute(name);
+    var autoRoute = PubspecUtils.autoRoute!;
+    if(autoRoute){
+      arcAddRoute(name);
+    }    
   }
 
   @override
