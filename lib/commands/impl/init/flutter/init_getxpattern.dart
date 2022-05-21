@@ -60,7 +60,7 @@ Future<void> createInitGetxPattern() async {
   ''');
   writeFile('lib/app/core/configs/index.dart','');
   writeFile('lib/app/core/themes/index.dart','');
-  writeFile('lib/app/core/utils/index.dart','!.gitignore');
+  writeFile('lib/app/core/utils/index.dart','');
   writeFile('lib/app/core/index.dart','''export configs/index.dart;
   export themes/index.dart;
   export utils/index.dart;
