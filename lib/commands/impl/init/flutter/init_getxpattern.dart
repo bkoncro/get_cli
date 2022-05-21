@@ -57,13 +57,13 @@ Future<void> createInitGetxPattern() async {
   export parts/index.dart;
   export shimmers/index.dart;
   export dialogs/index.dart;
-  ''');
+  ''',skipFormatter:true);
   writeFile('lib/app/core/configs/index.dart','');
   writeFile('lib/app/core/themes/index.dart','');
   writeFile('lib/app/core/utils/index.dart','');
   writeFile('lib/app/core/index.dart','''export configs/index.dart;
   export themes/index.dart;
   export utils/index.dart;
-  ''');
+  ''',skipFormatter:true);
   LogService.success(Translation(LocaleKeys.sucess_getx_pattern_generated));
 }
