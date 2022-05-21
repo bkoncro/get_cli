@@ -48,7 +48,6 @@ Future<void> createInitGetxPattern() async {
 
   writeFile('lib/app/data/services/.gitignore','!.gitignore');
   writeFile('lib/app/data/models/.gitignore','!.gitignore');
-  writeFile('lib/app/data/providers','!.gitignore');
   writeFile('lib/app/data/providers/apis/.gitignore','!.gitignore');
   writeFile('lib/app/widgets/components/.gitignore','!.gitignore');
   writeFile('lib/app/widgets/parts/.gitignore','!.gitignore');
