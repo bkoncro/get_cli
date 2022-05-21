@@ -53,7 +53,7 @@ Future<void> createInitGetxPattern() async {
   writeFile('lib/app/widgets/parts/index.dart','');
   writeFile('lib/app/widgets/shimmers/index.dart','');
   writeFile('lib/app/widgets/dialogs/index.dart','');   
-  writeFile('lib/app/widgets/index.dart','''export components/index.dart;
+  writeFile('lib/app/widgets/index.dart','''import components/index.dart;
   export parts/index.dart;
   export shimmers/index.dart;
   export dialogs/index.dart;''',skipFormatter:true,skipRename:true);
