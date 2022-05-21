@@ -53,10 +53,15 @@ Future<void> createInitGetxPattern() async {
   writeFile('lib/app/widgets/parts/index.dart','');
   writeFile('lib/app/widgets/shimmers/index.dart','');
   writeFile('lib/app/widgets/dialogs/index.dart','');   
-  writeFile('lib/app/widgets/index.dart','export components/index.dart;export parts/index.dart;\nexport shimmers/index.dart;\nexport dialogs/index.dart;',skipFormatter:true);
+  writeFile('lib/app/widgets/index.dart','''export components/index.dart;
+  export parts/index.dart;
+  export shimmers/index.dart;
+  export dialogs/index.dart;''',skipFormatter:true,skipRename:true);
   writeFile('lib/app/core/configs/index.dart','');
   writeFile('lib/app/core/themes/index.dart','');
   writeFile('lib/app/core/utils/index.dart','');
-  writeFile('lib/app/core/index.dart','export configs/index.dart;\nexport themes/index.dart;\nexport utils/index.dart;',skipFormatter:true);
+  writeFile('lib/app/core/index.dart','''export configs/index.dart;
+  export themes/index.dart;
+  export utils/index.dart;''',skipFormatter:true,skipRename:true);
   LogService.success(Translation(LocaleKeys.sucess_getx_pattern_generated));
 }
