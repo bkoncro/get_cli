@@ -46,15 +46,24 @@ Future<void> createInitGetxPattern() async {
   writeFile('lib/app/widgets/index.dart','');
   writeFile('lib/app/core/index.dart','');
 
-  writeFile('lib/app/data/services/.gitignore','!.gitignore');
-  writeFile('lib/app/data/models/.gitignore','!.gitignore');
+  writeFile('lib/app/data/services/index.dart','');
+  writeFile('lib/app/data/models/index.dart','');
   writeFile('lib/app/data/providers/apis/.gitignore','!.gitignore');
-  writeFile('lib/app/widgets/components/.gitignore','!.gitignore');
-  writeFile('lib/app/widgets/parts/.gitignore','!.gitignore');
-  writeFile('lib/app/widgets/shimmers/.gitignore','!.gitignore');
-  writeFile('lib/app/widgets/dialogs/.gitignore','!.gitignore');   
-  writeFile('lib/app/core/configs/.gitignore','!.gitignore');
-  writeFile('lib/app/core/theme/.gitignore','!.gitignore');
-  writeFile('lib/app/core/utils/.gitignore','!.gitignore');
+  writeFile('lib/app/widgets/components/index.dart','');
+  writeFile('lib/app/widgets/parts/index.dart','');
+  writeFile('lib/app/widgets/shimmers/index.dart','');
+  writeFile('lib/app/widgets/dialogs/index.dart','');   
+  writeFile('lib/app/widgets/index.dart','''export components/index.dart;
+  export parts/index.dart;
+  export shimmers/index.dart;
+  export dialogs/index.dart;
+  ''');
+  writeFile('lib/app/core/configs/index.dart','');
+  writeFile('lib/app/core/themes/index.dart','');
+  writeFile('lib/app/core/utils/index.dart','!.gitignore');
+  writeFile('lib/app/core/index.dart','''export configs/index.dart;
+  export themes/index.dart;
+  export utils/index.dart;
+  ''');
   LogService.success(Translation(LocaleKeys.sucess_getx_pattern_generated));
 }
